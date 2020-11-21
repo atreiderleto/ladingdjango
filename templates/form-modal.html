@@ -1,0 +1,55 @@
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content  rounded">
+                <div class="modal-header bg-primary rounded-top">
+                    <h5 class="modal-title bg-primary text-white rounded" id="exampleModalLabel">Ingresa y Obten tu Descuento</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body row">
+
+                    <div class="col-md-6">
+
+                    </div>
+
+                    <!-- FORMULARIO DEL MODAL-->
+                    <form class="col-md-6">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Nombre">
+
+                        </div>
+                        <div class="form-group">
+
+                            <input type="email" class="form-control" id="recipient-name" placeholder="@Correo">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="texts" class="form-control" id="recipient-name" placeholder="Telefono">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="recipient-name" placeholder="Pais">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Ingresar</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>

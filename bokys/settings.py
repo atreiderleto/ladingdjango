@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'bokys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dacim2f6cdh52h',
-        'USER': 'vtsippivnymyvc',
-        'PASSWORD': '7e6bef8c3ea5d993e8d28eb6021e609f570ddb613af6cdc482b1c7c03e05c218',
-        'HOST': 'ec2-35-175-155-248.compute-1.amazonaws.com',
+        'NAME': 'landing',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
         'PORT': '5432',
     }}
 
@@ -122,9 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env", "static_root")
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

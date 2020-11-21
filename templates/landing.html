@@ -1,0 +1,145 @@
+{% extends "layouts/base.html" %}
+{% load static%}
+
+{% block content %}
+
+    <!-- CONTENIDO DEL JUMBOTRON -->
+
+    <div class="jumbotron">
+
+        <p class="display-4 col-7">Realiza tus procedimientos medicos <strong style="color: #ff2d6b">fuera del
+                pais</strong> con confianza</p>
+        <p class="lead col-7" style="color: #635b5b;">Hasta 25% en tu primera consulta</p>
+        <div class="lead">
+            <a class="boton-main btn btn-primary btn-lg mt-sm-5" href="#" role="button">Obten tu descuento</a>
+        </div>
+    </div>
+
+
+    <!-- ETIQUETA-->
+
+    <div id="etiqueta" class="container-fluid row justify-content-center" style="height: 150px;">
+
+        <div class="etiqueta col-2  text-center p-4">
+            <img class="img-fluid" src="{% static "img/etiquetas-home/red-eyes.png" %}" alt="eyes">
+            <h3 class="mt-2">Procedimient</h3>
+            <span class="etiqueta-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi </span>
+        </div>
+
+        <div class="etiqueta col-2 text-center p-4">
+            <img class="img-fluid" src="{% static "img/etiquetas-home/heart-rate.png" %}" alt="heart">
+            <h3 class="mt-2">Procedimient</h3>
+            <span class="etiqueta-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi </span>
+        </div>
+
+        <div class="etiqueta col-2 text-center p-4">
+            <img class="img-fluid" src="{% static "img/etiquetas-home/stomachache.png" %}" alt="stomash">
+            <h3 class="mt-2">Procedimient</h3>
+            <span class="etiqueta-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi </span>
+        </div>
+
+        <div class="etiqueta col-2 text-center p-4">
+            <img class="img-fluid" src="{% static "img/etiquetas-home/tooth.png" %}" alt="tooth">
+            <h3 class="mt-2">Procedimient</h3>
+            <span class="etiqueta-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi </span>
+        </div>
+
+        <div class="etiqueta col-2 text-center p-4">
+            <img class="img-fluid" src="{% static "img/etiquetas-home/tuberculosis.png" %}" alt="tuberculosis">
+            <h3 class="mt-2">Procedimient</h3>
+            <span class="etiqueta-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nisi </span>
+        </div>
+    </div>
+
+    <!-- CONTENIDO 1-->
+
+    <section id="seccion" class="container-fluid row p-0 mx-auto">
+
+        <div class="contenido  col-md-8 col-sm-12 m-0 p-0 ">
+
+            <h3 class="display-4 text-center font-weight-bold" style="color: #0228bd;">Por que <strong
+                    style="color: #ff2d6b;">elegirnos?</strong></h3>
+
+            <div class="media p-5 p-md-1 p-sm-2 col-sm-12">
+                <div class="media-cuadro text-center text-white display-4 font-weight-bold align-middle p-4"> 1 </div>
+                <div class="media-body">
+                    <h3 class="mt-2 col-3  font-weight-bold ">Inovacion</h3>
+                    <p class="mt2 col-sm-9 col-12">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                        scelerisque ante
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                </div>
+            </div>
+
+            <div class="media p-5 p-md-1 mt-5 p-sm-2 col-sm-12">
+                <div class="media-cuadro text-center text-white display-4 font-weight-bold align-middle p-4"> 2 </div>
+                <div class="media-body">
+                    <h3 class="mt-2 col-3  font-weight-bold ">Equipo</h3>
+                    <p class="mt2 col-sm-9 col-12">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                        scelerisque ante
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                </div>
+            </div>
+
+            <div class="media p-5 p-md-1 mt-5 p-sm-2 col-sm-12">
+                <div class="media-cuadro text-center text-white display-4 font-weight-bold align-middle p-4"> 3 </div>
+                <div class="media-body">
+                    <h3 class="mt-2 col-3  font-weight-bold ">Experiencia</h3>
+                    <p class="mt2 col-sm-9 col-12">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                        scelerisque ante
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="publicidad col-md-4 col-sm-12 p-0 align-bottom">
+            <div class="cuadro"></div>
+            <img class="img-fluid" src="{% static "img/publicidad/33.png" %}" alt="imagen">
+        </div>
+    </section>
+
+    <!-- FORMULARIO DEL CUERPO-->
+    <section class="seccion-2 container-fluid row p-0 col-12 mx-auto">
+        <div class="publicidad-1 col-md-6 col-sm-12 p-0 align-bottom">
+            <div class="cuadro-1"></div>
+            <img class="img-fluid" src="{% static "img/publicidad/22.png" %}" alt="imagen2">
+        </div>
+
+        <form class="col-md-6 col-sm-10 mx-sm-auto">
+
+            {% csrf_token %}
+
+            <h2 class="descuento font-weight-bold display-4  text-center" style="color: #0228bd;">Obten hasta un <strong
+                    style="color: #ff2d6b;">25% de descuento</strong> en tu primera consulta</h2>
+
+
+            <div class="form-group mt-5 mx-auto">
+
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Pais">
+
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </section>
+	
+{% endblock %}

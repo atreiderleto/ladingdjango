@@ -1,0 +1,326 @@
+/*  FUENTES  */
+
+@font-face{
+    font-family: 'mont';
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+@font-face{
+    font-family: 'anton';
+    src: url('../fonts/Anton-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+
+/*GENERALES*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*ESTILOS HEADER O CABEZERA*/
+
+#header {
+    background-color: #18349f;
+}
+
+/* ESTILOS BARRA DE NAVEGACION O NAVBAR*/
+
+.navbar{
+    font-family: 'mont';
+    background-color: #18349f;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar-brand{
+    width: 20%;
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
+
+.navbar-nav{
+    width: 60%;
+}
+
+.navbar-toggler{
+    background-color: #ff2d6b;
+}
+
+.navbar-toggler-icon{
+    font-size: 18spx;
+    text-align: center;
+}
+
+
+/*ESTILOS DEL JUMBUTRON O PORTADA*/
+
+.jumbotron {  
+    height: 600px; 
+    background: linear-gradient(rgba(255, 255, 255, 0.692), rgba(197, 196, 196, 0.2)), url(../img/enc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #0228bd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.boton-main{
+    background-color: #0228bd;
+}
+
+/*ETIQUETAS*/
+
+
+.etiqueta {
+    position: relative;
+    top: -120px;
+    width: 12%;
+    height: 220px;
+    background-color: #0228bd;
+    margin-left: 1rem;
+    box-shadow: 1px 1px 3px 1px rgba(179, 170, 170, 0.603);
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+}
+
+.etiqueta img{
+    width: 32%;
+    height: 50px ;
+}
+
+.etiqueta-span {
+    font-size: 12px;
+}
+
+/* SCETION TAB --- POR QUE ELEGIRNOS*/
+
+
+.contenido {
+    background-image: url(../img/publicidad/bg1.png);
+}
+
+#seccion {
+    height: 1050px;
+}
+
+.media-cuadro {
+    width: 20%;
+    height: 140px;
+    background-color: #ff2d6b;
+    border-radius: 15px 15px 15px 15px;
+    border: 8px solid rgba(231, 228, 228, 0.9);
+}
+
+.publicidad {
+    height: 500px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #0228bd;
+}
+
+.cuadro {
+    width: 40%;
+    height: 150px;
+    background-color: #ff2d6b;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 1px 1px 3px 1px rgba(45, 11, 236, 0.603);
+    position: relative;
+    left: -20%;
+    top: 30%;
+}
+
+.seccion-2 {
+    height: 950px;
+}
+
+
+.publicidad-1 {
+    height: 600px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #0228bd;
+
+}
+
+
+.cuadro-1 {
+    width: 30%;
+    height: 150px;
+    background-color: #ff2d6b;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 1px 1px 3px 1px rgba(45, 11, 236, 0.603);
+    position: relative;
+    left: 50%;
+    top: -10%;
+}
+
+/*ESTILOS DEL PIE DE PAGINA O FOOTER*/
+
+
+#footer{
+    height: 500px;
+    background-image: url(../img/publicidad/bg1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #0228bd;
+}
+
+.footer-t {
+    width: 20%;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    font-family: 'mont';
+    color: white;
+}
+
+
+
+
+/*RESPONSIVE O MEDIA QUERY*/
+
+
+@media (max-width: 800px) {
+
+    .etiqueta {
+        height: 150px;
+        top: -23px;
+    }
+
+    .etiqueta img {
+        height: 30px;
+    }
+
+    .etiqueta h3 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .etiqueta-span{
+        font-size: 8px;
+    }
+
+    .cuadro {
+        height: 108px;
+    }
+
+    #seccion {
+        height: 680px;
+    }
+
+    .seccion-2 {
+        height: 675px;
+    }
+
+    #footer {
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    #etiqueta {
+        display: none;
+    }
+
+    #seccion {
+        height: 800px;
+    }
+
+    .cuadro {
+        height: 95px;
+    }
+
+    .cuadro-1 {
+        height: 100px;
+    }
+
+    .descuento {
+        font-size: 3rem;
+    }
+
+    .seccion-2 {
+        height: 650px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+  
+
+    #seccion {
+        height: 670px;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .media-cuadro {
+        width: 25%;
+    }
+    
+    .publicidad {
+        display: none;
+    }
+
+    .publicidad-1 {
+        display: none;
+    }
+}
+
+
+@media (max-width: 414px) {
+
+    #seccion {
+        height: 1070px;
+    }
+
+    .display-4 {
+        font-size: 2.0rem;
+    }
+
+    .media-cuadro {
+        width: 40%;
+    }
+    
+    .publicidad {
+        display: none;
+    }
+
+    .publicidad-1 {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .media {
+        padding: 30px !important;
+        height: auto;
+    }
+
+    .media-cuadro {
+        width: 36%;
+        height: 120px;
+    }
+
+    .descuento {
+        height: ;
+    }
+
+    .seccion-2{
+        margin-top: 250px;
+        text-align: center;
+    }
+
+    #footer {
+        padding: 0px;
+        margin: 0px;
+    }
+}
