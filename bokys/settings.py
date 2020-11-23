@@ -28,16 +28,25 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+SOCIAL_AUTH_FACEBOOK_KEY = '2879292612299816'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'df3e5f852129f128231e6e4ce262691d'
+
+
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'apps.index',
+    'allauth',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'bokys.urls'
@@ -63,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -128,3 +141,17 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_env", "static_root")
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+ 
+)
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/landing'
+
+

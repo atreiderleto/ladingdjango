@@ -18,9 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [ 
     path('admin/', admin.site.urls), 
     # Enter the app name in following syntax for this to work 
     path('', include("apps.index.urls")), 
+    path('oauth/', include('social_django.urls', namespace='social')),
+    path('accounts/', include('allauth.urls')),
     
 ]

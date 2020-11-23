@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 #modelo usuario
 from django.contrib.auth.models import User
@@ -12,22 +13,17 @@ from django.contrib.auth.models import User
 def landingPage(request):
 	return render(request, 'landing.html')
 
+	
 
-def registro(request):
-	#registro de usuario
-	return render(request, 'nav-bar.html')
-
+@login_required()
+def logout(request):
+	#deslogear usuario
+	logout(request)
+	messages.success(request, 'Tu seccion se Cerro con Exito')
+	return redirect('landing')
 	
 		
-# if request.method == 'POST':
-# 		username = request.POST['usuario']
-# 		correo = request.POST['correo']
-# 		telefono = request.POST['telefono']
-# 		pais = request.POST['pais']
-
-# 		if user == '' or correo =='' or telefono == '' or pais == '':
-# 			return render(request, 'form-modal.html', {'error': 'Todos los campos son obligatorios'})
-		
+	
 
 class IndexView(TemplateView):
     template_name = "index.html"

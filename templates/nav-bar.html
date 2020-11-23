@@ -1,3 +1,6 @@
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static%}
     <header id="header" class="container-fluid">
         <!--NAVEGACION -->
         <nav class="container navbar navbar-expand-lg">
@@ -21,12 +24,29 @@
                         <a class="nav-link ml-2" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ml-2" href="#">Contactos</a>
+                        <a class="nav-link ml-2 mr-3" href="#">Contactos</a>
                     </li>
+
+                    </li>
+                    
+
+                    
                 </ul>
 
-                <a href="" class="btn btn-lg btn-danger ml-auto" data-toggle="modal" data-target="#exampleModal">Obten
+                {% if user.is_authenticated %}
+                        <a class="btn btn-lg btn-danger ml-auto" href="">cerrar seccion</a>
+                        <h3 class="text-white lead ml-3 text-center">Bienvenido, {{user.username}}</h3>
+                {% else %}
+                 <a href="" class="btn btn-lg btn-danger ml-auto" data-toggle="modal" data-target="#exampleModal">Obten
                     tu descuento</a>
+
+                 {% endif %}
+
+
+                 
             </div>
         </nav>
     </header>
+
+
+
