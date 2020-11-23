@@ -17,38 +17,42 @@
                     </div>
 
                     <!-- FORMULARIO DEL MODAL-->
-                    <form class="col-md-6">
+                    <form class="col-md-6" method="POST" action="">
                         {% csrf_token %}
 
+                        {% if error %}
+                            <p class="alert alert-danger">{{error}}</p>
+                        {% endif %}
+
                         <div class="form-group">
 
-                            <input type="text" class="form-control" id="recipient-name" placeholder="Nombre">
+                            <input type="text" name="usuario" class="form-control" id="recipient-name" placeholder="Nombre" required="true">
 
                         </div>
                         <div class="form-group">
 
-                            <input type="email" class="form-control" id="recipient-name" placeholder="@Correo">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <input type="texts" class="form-control" id="recipient-name" placeholder="Telefono">
+                            <input type="email" name="correo" class="form-control" id="recipient-name" placeholder="@Correo" required="true">
 
                         </div>
 
                         <div class="form-group">
 
-                            <input type="text" class="form-control" id="recipient-name" placeholder="Pais">
+                            <input type="text" name="telefono" class="form-control" id="recipient-name" placeholder="Telefono" required="true">
 
                         </div>
+
+                        <div class="form-group">
+
+                            <input type="text" name="pais" class="form-control" id="recipient-name" placeholder="Pais" required="true">
+
+                        </div>
+
+                            <div class="modal-footer ml-auto">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Registrarme</button>
+                            </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Ingresar</button>
-                    
                 </div>
             </div>
         </div>

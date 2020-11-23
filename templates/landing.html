@@ -98,47 +98,52 @@
         </div>
     </section>
 
+
+
     <!-- FORMULARIO DEL CUERPO-->
     <section class="seccion-2 container-fluid row p-0 col-12 mx-auto">
+
         <div class="publicidad-1 col-md-6 col-sm-12 p-0 align-bottom">
             <div class="cuadro-1"></div>
             <img class="img-fluid" src="{% static "img/publicidad/22.png" %}" alt="imagen2">
         </div>
 
-        <form class="col-md-6 col-sm-10 mx-sm-auto">
+        <form class="col-md-6 col-sm-10 mx-sm-auto" method="POST" action="">
 
             {% csrf_token %}
 
-            <h2 class="descuento font-weight-bold display-4  text-center" style="color: #0228bd;">Obten hasta un <strong
-                    style="color: #ff2d6b;">25% de descuento</strong> en tu primera consulta</h2>
+            <h2 class="descuento font-weight-bold display-4  text-center" style="color: #0228bd;">Obten hasta un <strong style="color: #ff2d6b;">25% de descuento</strong> en tu primera consulta</h2>
 
 
             <div class="form-group mt-5 mx-auto">
 
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter email">
+                <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="true">
 
             </div>
 
             <div class="form-group">
 
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="email" name="correo" class="form-control" id="exampleInputPassword1" placeholder="@correo" required="true">
 
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+                <input type="text" name="telefono" class="form-control" id="exampleInputPassword1" placeholder="Telefono" required="true">
 
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Pais">
+                <input type="text" name="pais" class="form-control" id="exampleInputPassword1" placeholder="Pais" required="true">
 
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                {% if error %}
+                    <p class="alert alert-danger">{{error}}</p>
+                {% endif %}
+
+            <button type="submit" class="btn btn-primary btn-block">Registrarme</button>
         </form>
     </section>
 	
