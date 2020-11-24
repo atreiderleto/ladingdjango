@@ -13,20 +13,15 @@ from django.contrib.auth.models import User
 def landingPage(request):
 	return render(request, 'landing.html')
 
-	
 
 
-
-def logout(request):
-	if request.user.is_authenticated:
-	#deslogear usuario
-		logout(request)
-		message.success(request, 'Tu seccion se Cerro con Exito')
-
-	return redirect('index.views.logout')
-	
+@login_required
+def logout_view(request):
+	#vistadel log out 
+	logout(request)
+	return redirect('landing')
 		
-	
+
 
 class IndexView(TemplateView):
     template_name = "index.html"
