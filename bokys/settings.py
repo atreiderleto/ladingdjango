@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'bokys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'landing',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
+        'NAME': 'dfonipaih3ohof',
+        'USER': 'krmqznggroulix',
+        'PASSWORD': '40d34637cc313dd9d37de78f83bdc31c3c717774e8c16654edce4be2092d7330',
+        'HOST': 'ec2-52-203-182-92.compute-1.amazonaws.com',
         'PORT': '5432',
     }}
 
@@ -154,6 +154,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = 'landing'
+LOGIN_REDIRECT_URL = '/landing/'
 
 
