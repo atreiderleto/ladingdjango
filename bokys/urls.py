@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin 
 from django.urls import path, include 
 from django.conf import settings
-from django.conf.urls.static import statics
+from django.conf.urls.static import static
 
 
 urlpatterns = [ 
@@ -24,5 +24,5 @@ urlpatterns = [
     # Enter the app name in following syntax for this to work 
     path('', include("apps.index.urls")), 
     path('oauth/', include('social_django.urls', namespace='social')),
-    path('accounts/', include('allauth.urls')),s  
+    path('accounts/', include('allauth.urls')), 
 ]

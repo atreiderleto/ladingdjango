@@ -1,0 +1,1 @@
+web: gunicorn bokys-01.wsgi
