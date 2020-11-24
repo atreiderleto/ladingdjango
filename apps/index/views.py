@@ -15,12 +15,15 @@ def landingPage(request):
 
 	
 
-@login_required()
+
+
 def logout(request):
+	if request.user.is_authenticated:
 	#deslogear usuario
-	logout(request)
-	messages.success(request, 'Tu seccion se Cerro con Exito')
-	return redirect('landing')
+		logout(request)
+		message.success(request, 'Tu seccion se Cerro con Exito')
+
+	return redirect('index.views.logout')
 	
 		
 	

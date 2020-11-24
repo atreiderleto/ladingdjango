@@ -25,7 +25,7 @@ SECRET_KEY = 'oisld@ig@&td1!nha-iiz2hzhqbf4b*4h9x=kgr%pu^qz^f_*4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = '2879292612299816'
@@ -87,15 +87,27 @@ WSGI_APPLICATION = 'bokys.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+import dj_database_url
+from decouple import config
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'landing',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }}
+    'default': dj_database_url(
+        default=config('DATABASES_URL')
+
+    )
+}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd17ijh22hp3stm',
+#         'USER': 'hoxmvaumgybqtw',
+#         'PASSWORD': '47ec5014ef986bcb351aafe5cbe96bb01a1346a7d4bd222ccd2540234f62f1bb',
+#         'HOST': 'ec2-52-44-139-108.compute-1.amazonaws.comt',
+#         'PORT': '5432',
+#     }}
+
 
 
 # Password validation
