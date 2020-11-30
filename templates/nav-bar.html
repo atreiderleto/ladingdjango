@@ -1,54 +1,49 @@
 {% load socialaccount %}
 {% providers_media_js %}
 {% load static%}
-    <header id="header" class="container-fluid">
-        <!--NAVEGACION -->
-        <nav class="container navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">bokys</a>
-            <button class="navbar-toggler p-1 w-50" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-white font-weight-bold">Menu</span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav justify-content-between">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-2" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-2" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-2" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ml-2 mr-3" href="#">Contactos</a>
-                    </li>
+<header id="header" class="container-fluid">
+    <!--NAVEGACION -->
+    <nav class="container navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">bokys</a>
+        <button class="navbar-toggler p-1 w-50" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white font-weight-bold">Menu</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav justify-content-between">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ml-2" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ml-2" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ml-2" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ml-2 mr-3" href="#">Contactos</a>
+                </li>
 
-                    </li>
-                    
+                </li>
+            </ul>
 
-                    
-                </ul>
-
-                {% if not  user.is_authenticated %}
-                      <a href="" class="btn btn-lg btn-danger ml-auto col-4" data-toggle="modal" data-target="#exampleModal">Obten
-                     tu descuento</a>
-                        
-                        
-                {% else %}
-                    <h3 class="text-white lead ml-auto text-center ">Bienvenido, {{user.username}}</h3>
-                    <a class="btn btn-sm btn-danger ml-auto col-2" href="{% url 'index:logout' %}">Cerrar Sesión</a>
-                  
-                 {% endif %}
+            {% if not  user.is_authenticated %}
+            <a href="" class="btn btn-lg btn-danger ml-auto col-4" data-toggle="modal" data-target="#exampleModal">Obten
+                tu descuento</a>
 
 
-                 
-            </div>
-        </nav>
-    </header>
+            {% else %}
+
+            <h3 class="text-white lead ml-auto text-center ">Bienvenido, {{user.username}}</h3>
+            <a class="btn btn-sm btn-danger ml-auto col-2" href="{% url 'index:logout' %}">Cerrar Sesión</a>
+
+            {% endif %}
 
 
 
+        </div>
+    </nav>
+</header>

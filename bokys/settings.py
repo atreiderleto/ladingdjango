@@ -28,8 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2879292612299816'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'df3e5f852129f128231e6e4ce262691d'
+
 
 
 # Application definition
@@ -42,11 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
-    'apps.index',
     'allauth',
+    'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'apps.index',
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
 
 ]
 
@@ -74,8 +74,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -91,10 +89,10 @@ WSGI_APPLICATION = 'bokys.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dfonipaih3ohof',
-        'USER': 'krmqznggroulix',
-        'PASSWORD': '40d34637cc313dd9d37de78f83bdc31c3c717774e8c16654edce4be2092d7330',
-        'HOST': 'ec2-52-203-182-92.compute-1.amazonaws.com',
+        'NAME': 'd7faivf1rfn9ap',
+        'USER': 'reuzgacpjhdvep',
+        'PASSWORD': '0f19a43daf727830d216160e875818a2de3048a9d7c02d46f7223202bc763eea',
+        'HOST': 'ec2-54-166-114-48.compute-1.amazonaws.com',
         'PORT': '5432',
     }}
 
@@ -146,14 +144,28 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
- 
 )
-
-SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/landing/'
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '651137936690-u39ti4qstt9b6h8rkoq2rpqphtrgqjdh.apps.googleusercontent.com',
+            'secret': 'Kmru69cN6radHmKVRM1qn8c4',
+            'key': ''
+        }
+    },
 
+   'facebook': {
+    'APP': {
+        'client_id': '2879292612299816',
+        'secret': 'df3e5f852129f128231e6e4ce262691d',
+        'key': ''
+    }
+}
+}
+
+SITE_ID = 1
