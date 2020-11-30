@@ -1,11 +1,13 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import HttpResponseRedirect
+
+
 #modelo usuario
-from django.contrib.auth.models import User
-from apps.index.models import usuario
+
+from apps.index.models import informacion
 
 
 
@@ -16,13 +18,18 @@ def landingPage(request):
 
 
 def registro(request):
-	#vista del registro
 	if request.method == 'POST':
-		nombre = request.POST['nombre']
-		correo = request.POST['correo']
-		telefono = request.POST['telefono']
-		pais = request.POST['pais']
-	
+		info = informacion()
+		info.nombre = request.POST['nombre']
+		info.correo = request.POST['correo']
+		info.telefono = request.POST['telefono']
+		info.pais = request.POST['pais']
+		
+		info.save()		
+
+		return redirect('index:landing')
+			
+
 
 
 
