@@ -19,35 +19,31 @@
             <div class="modal-body row">
 
                 <!-- FORMULARIO DEL MODAL-->
-                <form class="col-md-8 mx-auto mt-3"  action="{% url 'index:registro' %}" method="POST">
+                <form id="formulario" class="col-md-8 mx-auto mt-3"  action="{% url 'index:registro' %}" method="POST">
+                    
                     {% csrf_token %}
 
-                    
-
                     <div class="form-group">
 
-                        <input type="text" name="nombre" class="form-control" id="recipient-name" placeholder="Nombre"
-                            required="true">
+                        <input id="nombre" type="text" name="nombre" class="form-control" id="recipient-name" placeholder="Nombre">
 
                     </div>
                     <div class="form-group">
 
-                        <input type="email" name="correo" class="form-control" id="recipient-name" placeholder="@Correo"
-                            required="true">
+                        <input id="correo" type="email" name="correo" class="form-control" id="recipient-name" placeholder="@Correo" >
 
                     </div>
 
                     <div class="form-group">
 
-                        <input type="text" name="telefono" class="form-control" id="recipient-name"
-                            placeholder="Telefono" required="true">
+                        <input id="telefono" type="text" name="telefono" class="form-control" id="recipient-name"
+                            placeholder="Telefono" >
 
                     </div>
 
                     <div class="form-group">
 
-                        <input type="text" name="pais" class="form-control" id="recipient-name" placeholder="Pais"
-                            required="true">
+                        <input id="pais" type="text" name="pais" class="form-control" id="recipient-name" placeholder="Pais">
 
                     </div>
 

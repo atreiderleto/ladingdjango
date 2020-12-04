@@ -118,47 +118,41 @@
 
 
 
-    <form class="col-md-6 col-sm-10 mx-sm-auto" method="POST" action="{% url "index:registro" %}">
+    <form id="formulario2" class="col-md-6 col-sm-10 mx-sm-auto" method="POST" action="{% url "index:registro" %}">
 
         {% csrf_token %}
 
         <h2 class="descuento font-weight-bold display-4  text-center" style="color: #0228bd;">Obten hasta un <strong
-                style="color: #ff2d6b;">25% de descuento</strong> en tu primera consulta</h2>
+        style="color: #ff2d6b;">25% de descuento</strong> en tu primera consulta</h2>
 
 
         <div class="form-group mt-5 mx-auto">
 
-            <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Nombre" required="true">
+            <input id="nombre2" type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
 
         </div>
 
         <div class="form-group">
 
-            <input type="email" name="correo" class="form-control" id="exampleInputPassword1" placeholder="@correo"
-                required="true">
+            <input id="correo2" type="email" name="correo" class="form-control" id="exampleInputPassword1" placeholder="@correo">
 
         </div>
 
         <div class="form-group">
 
-            <input type="text" name="telefono" class="form-control" id="exampleInputPassword1" placeholder="Telefono"
-                required="true">
+            <input id="telefono2"  type="text" name="telefono" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
 
         </div>
 
         <div class="form-group">
 
-            <input type="text" name="pais" class="form-control" id="exampleInputPassword1" placeholder="Pais"
-                required="true">
+            <input id="pais2" type="text" name="pais" class="form-control" id="exampleInputPassword1" placeholder="Pais">
 
         </div>
 
         <div class="container-fluid">
 
-            {% if error %}
-            <p class="alert alert-danger">{{error}}</p>
-            {% endif %}
+         
 
             <a class="btn btn-primary btn-block mt-3 mb-3" href="{% provider_login_url 'facebook' %}"><svg
                     xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44"
@@ -176,7 +170,7 @@
                     <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8" />
                 </svg></a>
 
-            <input type="submit" class="btn btn-block btn-success" value="Registrarses">
+            <input type="submit" class="btn btn-block btn-success" value="Registrarse">
         </div>
 
 

@@ -314,8 +314,8 @@
         height: ;
     }
 
+
     .seccion-2{
-        margin-top: 250px;
         text-align: center;
     }
 
@@ -323,4 +323,9 @@
         padding: 0px;
         margin: 0px;
     }
+
+    .navbar-toggler-icon{
+
+    }
+
 }

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
 
 #modelo usuario
 
@@ -25,9 +25,9 @@ def registro(request):
 		info.telefono = request.POST['telefono']
 		info.pais = request.POST['pais']
 		
-		info.save()		
-
+		info.save()
 		return redirect('index:landing')
+		
 			
 
 
